@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" >
+<head>
+	<meta charset="UTF-8" />
+	<title>UIDAI Demo</title>
+	
+	<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+	crossorigin="anonymous">
+	
+<title th:text="${title}">demo html</title>
+<link rel="stylesheet" th:href="@{/css/style.css}" />	
+</head>
+<body>
+	
+	<div th:replace="base::sidebar" > </div> 
+	
+	<div class="content"> 
+		<h2>  authenticate demo page run</h2>
+		<div class="container-sm ">
+											
+		<!-- form  -->
+		<form class="row g-3"  th:action="@{/authuser/demo}" method="post" >
+			<h2> <span style="color: blue"> User data  </span> </h2>
+
+				<div class="col-md-5">
+					<label class="form-label">First name</label> <input
+						type="text" class="form-control" >
+				</div>
+				<div class="col-md-5">
+					<label class="form-label">last name</label> <input
+						type="text" class="form-control" >
+				</div>
+				
+				<div class=" mt-4 row">
+					<!-- radio button -->
+					<div class="  col-3 ">
+						<div class="form-check  ">
+							<input class="form-check-input" type="radio"
+								name="flexRadioDefault" id="flexRadioDefault1"> <label
+								class="form-check-label" for="flexRadioDefault1"> Male </label>
+						</div>
+						<div class="form-check mt-2 ">
+							<input class="form-check-input" type="radio"
+								name="flexRadioDefault" id="flexRadioDefault2" checked>
+							<label class="form-check-label" for="flexRadioDefault2"> Female </label>
+						</div>
+					</div>
+					<div class="col-2"></div>
+					<div class=" ms-3 col-4">
+						<label for="start">Start date:</label> <input type="date"
+							id="start" name="trip-start" value="2018-07-22">
+					</div>
+				</div>
+				<div class="col-12">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="gridCheck">
+						<label class="form-check-label" for="gridCheck"> Check me out </label>
+					</div>
+				</div>
+				
+				<div class="col-12">
+					<button type="submit" class="btn btn-primary" value="submit"> submit</button>
+				</div>
+			</form>
+			
+		</div>
+	</div>
+</body>
+</html>
